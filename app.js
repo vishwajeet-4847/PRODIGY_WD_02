@@ -38,7 +38,7 @@ function reset() {
     min.innerText = "00";
     sec.innerText = "00";
     ms.innerText = "00";
-    lap = [];
+    laps = [];
   
 }
 
