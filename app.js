@@ -59,8 +59,8 @@ ms.innerText =totalMilliseconds % 1000
 
 
 lapbtn.addEventListener('click', ()=>{
-    console.log(hello);
-    laps.push(elapsedTime);
+    
+   
     lap.innerHTML = laps.map((lap,index)=>{
         return `<li>Lap ${index+1}:   ${Math.floor((lap % 3600000) / 60000)}min ${Math.floor((lap % 60000) / 1000)}sec ${lap % 1000}ms</li>`
     }).join('');
