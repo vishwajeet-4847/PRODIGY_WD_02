@@ -11,7 +11,7 @@ let stopbtn = document.querySelector('.stop');
 let lapbtn = document.querySelector('.lap');
 let lap = document.querySelector('.laps');
 
-const laps =[];
+let laps =[];
 min.innerText = "00";
 sec.innerText = "00";
 ms.innerText = "00";
@@ -38,7 +38,9 @@ function reset() {
     min.innerText = "00";
     sec.innerText = "00";
     ms.innerText = "00";
-    laps.splice(0,laps.length-1);
+    laps=[];
+    updatelaps();
+
   
 }
 
@@ -61,7 +63,11 @@ ms.innerText =totalMilliseconds % 1000
 lapbtn.addEventListener('click', ()=>{
     
     laps.push(elapsedTime);
+    updatelaps();
+   
+});
+function updatelaps(){
     lap.innerHTML = laps.map((lap,index)=>{
         return `<li>Lap ${index+1}:   ${Math.floor((lap % 3600000) / 60000)}min ${Math.floor((lap % 60000) / 1000)}sec ${lap % 1000}ms</li>`
     }).join('');
-});
+}
