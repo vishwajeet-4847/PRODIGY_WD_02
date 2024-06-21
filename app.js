@@ -38,7 +38,7 @@ function reset() {
     min.innerText = "00";
     sec.innerText = "00";
     ms.innerText = "00";
-    laps = [];
+    laps.splice(0,laps.length-1);
   
 }
 
@@ -60,7 +60,7 @@ ms.innerText =totalMilliseconds % 1000
 
 lapbtn.addEventListener('click', ()=>{
     
-   
+    laps.push(elapsedTime);
     lap.innerHTML = laps.map((lap,index)=>{
         return `<li>Lap ${index+1}:   ${Math.floor((lap % 3600000) / 60000)}min ${Math.floor((lap % 60000) / 1000)}sec ${lap % 1000}ms</li>`
     }).join('');
