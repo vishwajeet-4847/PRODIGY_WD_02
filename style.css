@@ -68,3 +68,18 @@ span{
 .laps li:nth-child(even){
     color: chocolate;
 }
+@media screen and (max-width:550px) {
+    span{
+        font-size: 3rem;
+
+    }
+    .stopwatch{
+        font-size: 0.8rem;
+    }
+    button{
+       width: 4rem;
+       padding: 1rem;
+    }
+
+    
+}
